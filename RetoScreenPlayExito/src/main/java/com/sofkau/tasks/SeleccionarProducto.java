@@ -1,6 +1,7 @@
 package com.sofkau.tasks;
 
 import com.sofkau.util.Sikulix;
+import io.cucumber.java.ro.Si;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
@@ -31,7 +32,14 @@ public class SeleccionarProducto implements Task {
             Thread.sleep(6000);
             Sikulix.click("CERRAR_MENSAJE");
             Sikulix.click("CERRAR_MENSAJE");
-            precioMenor=Double.parseDouble(Target.the("")
+
+            Thread.sleep(6000);
+            Sikulix.click("CERRAR_MENSAJE");
+            Sikulix.click("DESPENSA.png");
+            Thread.sleep(6000);
+
+
+            /*precioMenor=Double.parseDouble(Target.the("")
                     .located(By.cssSelector("body > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(8) > \n" +
                             "section:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > \n" +
                             "div:nth-child(1) > div:nth-child(6) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > section:nth-child(1) > \n" +
@@ -63,8 +71,9 @@ public class SeleccionarProducto implements Task {
                     precioMenor=precioActual;
                     precioMenorTarget=precioActualTarget;
                 }
+
                 //System.out.println(precioMenor);
-            }
+            }*/
 
 
         } catch (FindFailed e) {
@@ -72,13 +81,13 @@ public class SeleccionarProducto implements Task {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        System.out.println(precioMenorTarget);
-        actor.attemptsTo(
+
+        /*actor.attemptsTo(
                 Scroll.to(Target.the("")
                         .located(By.cssSelector(precioMenorTarget))),
                 Click.on(Target.the("")
                         .located(By.cssSelector(precioMenorTarget)))
-        );
+        );*/
 
     }
 
