@@ -4,13 +4,18 @@ import com.sofkau.setup.Configuracion;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import java.util.logging.Logger;
+import org.sikuli.script.ImagePath;
 
 import static com.sofkau.tasks.NavegarIniciarSesion.navegarIniciarSesion;
+import static com.sofkau.tasks.SeleccionarProducto.seleccionarProducto;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static org.hamcrest.CoreMatchers.equalTo;
+
 public class ProductoStepDefinition extends Configuracion {
+
+    String newPath = "src/test/resources/images/";
+
+
     @Given("que el usuario registrado ya esta en la pagina inicial del exito")
     public void queElUsuarioRegistradoYaEstaEnLaPaginaInicialDelExito() {
         configurarNavegador();
@@ -20,7 +25,7 @@ public class ProductoStepDefinition extends Configuracion {
     }
 
     @When("navega hasta poder iniciar sesion")
-    public void navegaHastaPoderIniciarSesion() {
+    public void navegaHastaPoderIniciarSesion(){
         theActorInTheSpotlight().attemptsTo(
                 navegarIniciarSesion()
         );
@@ -28,7 +33,10 @@ public class ProductoStepDefinition extends Configuracion {
 
     @When("navega hasta seleccionar una {string} y un {string} de menor costo")
     public void navegaHastaSeleccionarUnaYUnDeMenorCosto(String string, String string2) {
-
+        ImagePath.setBundlePath(newPath);
+        theActorInTheSpotlight().attemptsTo(
+                seleccionarProducto()
+        );
     }
 
     @Then("realiza todo el flujo de compra con envio a domicilio")

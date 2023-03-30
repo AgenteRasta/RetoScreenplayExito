@@ -14,20 +14,24 @@ import org.sikuli.script.Key;
 import java.time.Duration;
 
 import static com.sofkau.ui.InicioDeSesion.*;
-import static com.sofkau.ui.PaginaInicial.MI_CUENTA;
+import static com.sofkau.ui.PaginaInicial.BOTON_CUENTA;
+
 
 public class NavegarIniciarSesion implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
 
         actor.attemptsTo(
-                Click.on(MI_CUENTA),
-                Click.on(INGRESAR_CON_EMAIL_CC),
-                Enter.theValue("email").into(CAMPO_EMAIL)
-                //Hit.the(Keys.TAB).into(CAMPO_EMAIL),
-
-                //Click.on(VER_CONTRASENIA)
-                //Click.on(BOTON_ENTRAR)
+                Click.on(BOTON_CUENTA),
+                Click.on(EMAIL_CONTRASENNA),
+                Click.on(CAMPO_EMAIL),
+                Enter.theValue("estiven.tr96@gmail.com").into(CAMPO_EMAIL),
+                Click.on(CAMPO_CONTRASENNA),
+                Enter.theValue("Queserauff1").into(CAMPO_CONTRASENNA),
+                Click.on(BOTON_ENTRAR)
+                //Hit.the(Keys.TAB).into(CAMPO_EMAIL)
+                //Enter.theValue("wenastardes").into(CAMPO_CONTRASENIA.waitingForNoMoreThan(Duration.ofSeconds(5)))
+                //webDriver.timeouts.implicitlywait,
             );
 
 
