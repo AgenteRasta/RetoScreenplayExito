@@ -14,6 +14,9 @@ public class InicioDeSesion {
     public static Target CAMPO_CONTRASENIA=Target.the("Campo de contrasenia para iniciar sesion")
             .located(By.cssSelector("div[class='relative'] label[class='vtex-input w-100']"));
 
+    public static Target CAMPO_CONTRASENIA_XPATH=Target.the("Campo")
+            .located(By.xpath("//input[@placeholder='Ingresa tu contraseña']"));
+
     public static Target VER_CONTRASENIA=Target.the("Ver contrasenia")
             .located(By.cssSelector("body > div:nth-child(87) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > form:nth-child(2) > div:nth-child(3) > div:nth-child(1) > label:nth-child(1) > div:nth-child(1) > span:nth-child(2)"));
 

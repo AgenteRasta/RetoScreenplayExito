@@ -1,6 +1,7 @@
 package com.sofkau.tasks;
 
 import io.appium.java_client.android.nativekey.PressesKey;
+import io.cucumber.java.af.En;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.*;
@@ -22,18 +23,13 @@ public class NavegarIniciarSesion implements Task {
         actor.attemptsTo(
                 Click.on(MI_CUENTA),
                 Click.on(INGRESAR_CON_EMAIL_CC),
-                Enter.theValue("email").into(CAMPO_EMAIL),
+                Enter.theValue("email").into(CAMPO_EMAIL)
                 //Hit.the(Keys.TAB).into(CAMPO_EMAIL),
-                Click.on(CAMPO_CONTRASENIA),
 
-                Enter.theValue("wenastardes").into(CAMPO_CONTRASENIA.waitingForNoMoreThan(Duration.ofSeconds(5)))
-                //webDriver.timeouts.implicitlywait,
-                //Enter.theValue("aaaaaaaaa").into(Target.the("")
-                        ///.locatedBy("div[class='relative'] label[class='vtex-input w-100']"))
-                //Enter.theValue("olajeje").into(CAMPO_EMAIL)
                 //Click.on(VER_CONTRASENIA)
                 //Click.on(BOTON_ENTRAR)
             );
+
 
     }
     public static NavegarIniciarSesion navegarIniciarSesion(){
